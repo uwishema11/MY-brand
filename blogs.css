@@ -1,0 +1,121 @@
+*{margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  
+}
+body{
+    font-family: "poppins" sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #333;
+}
+.navbar{
+    background-color: rgb(91, 91, 95);
+    color: #fff;
+    
+}
+ul{
+    list-style-type: none;
+   
+}
+.navbar.logo{
+    font-size: x-large;
+    font-weight: bold;
+    color: #d35e0f;
+}
+.navbar a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+.container1{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
+}
+.navbar ul{
+    display: flex;
+}
+.navbar ul li{
+    margin-left: 20px;
+}
+.blog-section{
+    width: 100%;
+}
+ .blog-section .content-blogs{
+    width: 85%;
+    margin: 70px  100px;
+}
+.blog-section .content-blogs .title{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+.blog-section .content-blogs .title h2{
+    font-size: 30px;
+    color: #6e3535;
+    text-transform: uppercase;
+}
+.blog-section .content-blogs .title p{
+    font-size: 12px;
+    color: black;
+    margin:  20px;
+}
+.blog-section .content-blogs .cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+    margin: 25px 25px;
+}
+.blog-section .content-blogs .cards .card{
+    
+    background-color: #4b3939;
+    position: relative;
+}
+.blog-section .content-blogs .cards .card img{
+    width: 400px;
+    height: 400px;
+}
+.blog-section .content-blogs .cards .card .article {
+    padding: 15px 20px;
+}
+.blog-section .content-blogs .cards .card .article h4{
+    font-size: 20px;
+    color: black;
+}
+.blog-section .content-blogs .cards .card .article p{
+    font-size: 16px;
+    color: black;
+    margin: 10px 0px;
+}
+.blog-section .content-blogs .cards .card a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: rgb(45, 45, 158);
+    border-radius: 40px;
+    padding: 8px 15px;
+    margin-left: 20px; 
+    color: #fff;
+}
+.blog-section .content-blogs .cards .card  .post-dated{
+    font-weight: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 6px 15px;
+    
+}
+@media screen  and (max-width: 1200px) {
+    .blog-section .content-blogs .cards{
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+@media screen  and (max-width: 800px) {
+    .blog-section .content-blogs .cards{
+        grid-template-columns:2fr;
+    }
+}
