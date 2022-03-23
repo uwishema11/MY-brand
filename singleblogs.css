@@ -27,7 +27,49 @@ img{
 .article h5{
     font-size: 20px;
 }
+.likes{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px ;
+    margin-left: 70px;
+    align-items: center;
+    cursor: pointer;
+}
+#close{
+    float: left;
+    font-size: 40px;
+    border-bottom: 6px solid rgb(40, 95, 47);
+    margin-bottom: 50px;
+    padding: 13px o ;
+
+}
+
+.likes i{
+    width: 26px;
+    outline: none;
+  
+}
 .footer-contents{
     display: flex;
-    margin-left: 80px;
+    align-items: center;
+    margin-left: 70px;
+}
+.footer-contents p{
+padding: 10px;
+font-size: 17px;
+}
+input{
+    border: none;
+    outline: none;
+    background-color: rgb(53, 15, 15);
+    width: 280px;
+    margin-left: 70px;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+
 }
