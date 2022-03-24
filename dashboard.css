@@ -1,0 +1,72 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: "poppins",sans-serif;
+} 
+.sidebar{
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgb(226, 198, 198);
+    margin-left: 40px;
+}
+.sidebar-logo{
+    height: 90px;
+    padding: 20px;
+    color: white;
+}
+.sidebar-logo span{
+    display: inline-block;
+    padding-right: 10px;
+}
+.sidebar-menu li{
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 1rem;
+}
+.sidebar-menu a{
+    display: block;
+    color: black;
+    font-size: 18px;
+    padding-left: 1rem;
+}
+.sidebar-menu a span:first-child{
+    font-size: 30px;
+    padding-right: 12px;
+}
+.sidebar-menu a.active{
+    background-color: #fff;
+    color: rgb(226, 198, 198);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 30px 0px 0px 30px;
+
+}
+.main-content{
+    margin-left: 270px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.search-wrapper{
+    border: 1px solid;
+    border-radius: 30px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+
+}
+.search-wrapper input{
+    height: 100%;
+    padding: 5rem;
+    border: none;
+    outline: none;
+}
