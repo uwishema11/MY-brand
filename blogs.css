@@ -43,7 +43,7 @@ ul{
     margin-left: 20px;
 }
 .blog-section{
-    width: 100%;
+    width: 700px
 }
  .blog-section .content-blogs{
     width: 85%;
@@ -56,7 +56,7 @@ ul{
 }
 .blog-section .content-blogs .title h2{
     font-size: 30px;
-    color: #6e3535;
+    color: #ece4e4;
     text-transform: uppercase;
 }
 .blog-section .content-blogs .title p{
@@ -74,6 +74,7 @@ ul{
     
     background-color: #4b3939;
     position: relative;
+    
 }
 .blog-section .content-blogs .cards .card img{
     width: 400px;
@@ -81,10 +82,11 @@ ul{
 }
 .blog-section .content-blogs .cards .card .article {
     padding: 15px 20px;
+    margin-right: 40px;
 }
 .blog-section .content-blogs .cards .card .article h4{
     font-size: 20px;
-    color: black;
+    color: white;
 }
 .blog-section .content-blogs .cards .card .article p{
     font-size: 16px;
