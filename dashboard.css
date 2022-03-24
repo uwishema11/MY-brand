@@ -64,6 +64,12 @@ header{
     overflow-x: hidden;
 
 }
+.search-wrapper span{
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1,5rem;
+
+}
 .search-wrapper input{
     height: 100%;
     padding: 5rem;
