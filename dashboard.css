@@ -24,6 +24,9 @@
     display: inline-block;
     padding-right: 10px;
 }
+.sidebar-menu{
+    margin-top: 20px;
+}
 .sidebar-menu li{
     width: 100%;
     margin-bottom: 10px;
@@ -53,7 +56,15 @@
 header{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 25px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2)
+}
+header h1{
+    color: #222;
+}
+header label span{
+    font-size: 20px;
+    padding-right: 13px;
 }
 .search-wrapper{
     border: 1px solid;
@@ -67,7 +78,7 @@ header{
 .search-wrapper span{
     display: inline-block;
     padding: 0rem 1rem;
-    font-size: 1,5rem;
+    font-size: 1.5rem;
 
 }
 .search-wrapper input{
@@ -75,4 +86,35 @@ header{
     padding: 5rem;
     border: none;
     outline: none;
+}
+.user-wrapper{
+    display: flex;
+    align-items: center;
+}
+.user-wrapper img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-wrapper small{
+    display: inline-block;
+    color: rgb(226, 198, 198);
+    
+}
+main{
+    margin-top: 50px;
+    padding: 20px 17px;
+    background: #f1f5f9;
+    min-height: calc(100vh - 90px);
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px ;
+}
+.single-card{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
 }
