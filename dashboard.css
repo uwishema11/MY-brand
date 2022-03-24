@@ -126,3 +126,14 @@ font-size: 40px;
 table{
     border-collapse: collapse;
 }
+.recent-grid{
+    margin-top: 30px;
+    
+}
+.card{
+    background: #fff;
+
+}
+table img{
+    padding-top: 10px;
+}
