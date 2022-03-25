@@ -66,3 +66,29 @@ img{
 img:hover{
     box-shadow: 0 14px 28px #333;
    }
+ @media screen and (max-width: 700px){
+     .container{
+         display: block;
+     }
+     
+ }
+ @media screen and (max-width: 700px){
+     .navbar ul li{
+         margin: 10px 5px;
+     }
+     
+ }
+ @media screen and (max-width: 500px){
+     .navbar ul li a{
+        font-size: 10px;
+     }
+     
+ }
+ @media screen and (max-width: 400px){
+     img{
+        margin-left: 10px;
+        width: 300px;
+        height: 300px;
+     }
+     
+ }
