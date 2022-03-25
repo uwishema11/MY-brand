@@ -15,6 +15,13 @@
     background-color: rgb(226, 198, 198);
     margin-left: 40px;
 }
+header{
+    margin-left: 280px;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
 .sidebar-logo{
     height: 90px;
     padding: 20px;
@@ -55,62 +62,6 @@
 }
 
 
-.main-content{
-    margin-left: 270px;
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 25px;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.2)
-}
-header h1{
-    color: #222;
-}
-header label span{
-    font-size: 20px;
-    padding-right: 13px;
-}
-.search-wrapper{
-    border: 1px solid;
-    border-radius: 30px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    overflow-x: hidden;
-
-}
-.search-wrapper span{
-    display: inline-block;
-    padding: 0rem 1rem;
-    font-size: 1.5rem;
-
-}
-.search-wrapper input{
-    height: 100%;
-    padding: 5rem;
-    border: none;
-    outline: none;
-}
-.user-wrapper{
-    display: flex;
-    align-items: center;
-}
-.user-wrapper img{
-    border-radius: 50%;
-    margin-right: 10px;
-}
-.user-wrapper small{
-    display: inline-block;
-    color: rgb(226, 198, 198);
-    
-}
-main{
-    margin-top: 50px;
-    padding: 20px 17px;
-    background: #f1f5f9;
-    min-height: calc(100vh - 90px);
-}
 .cards{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -131,11 +82,13 @@ font-size: 40px;
 table{
     border-collapse: collapse;  
     margin-top: 10px;
+    border:  1px solid rgba(0,0,0,0.2);
    
     
 }
 .recent-grid{
     margin-top: 30px;
+    margin-left: 280px;
     
 }
 .card{
@@ -167,10 +120,15 @@ table img{
 thead td{
     font-weight: 700;
     color: #333;
+   
 }
 table tr{
     border-bottom:  1px solid rgba(0,0,0,0.2);
+     
     
+}
+table tr td{
+    border-right:  1px solid rgba(0,0,0,0.2);
 }
 tbody tr:hover{
     background-color: #333;
@@ -200,11 +158,4 @@ td span{
     background-color: rgb(167, 26, 26);
     
     
-}
-.btn{
-    background-color: blue;
-    border-radius: 30px;
-    padding: 7px;
-    margin-left: 20px;
-    margin-top: 70px;
 }
