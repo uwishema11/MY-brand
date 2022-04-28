@@ -38,6 +38,11 @@ app.use(cors())
 
 
 app.use(express.json())
+app.get("/", (req,res)=>{
+  res.json({
+    message:"welcome"
+  })
+})
 app.use("/posts",postsRoute);
 app.use("/comments",commentsRoute);
 app.use("/users",userRoute);
