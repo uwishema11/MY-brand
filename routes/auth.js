@@ -69,18 +69,34 @@ const dotenv=require("dotenv")
 
 
 router.post("/", async function (req,res){
-    
+    //   try{
+    //     const { error } = await schema.validate(req.body);
+    //     if (error) return res.status(400).send(error.details[0].message);
+
    const user= await User.findOne({email:req.body.email});
-   if(!user){
-       res.status(400).send("Invalid email or password")
-   };
+   if(!user)return res.status(400).json({
+    status_code:0,
+    error_msg:"Invalid email or password"
+
+})
     const validPassword= await bcrypt.compare(req.body.password,user.password)
-    if(!validPassword){
-        res.status(400).send("Invalid email or password")
-    }
+    if(!validPassword)return res.status(400).json({
+        status_code:0,
+        error_msg:"Invalid email or password "
+    })
+    
    const token=user.generateAuthToken();
     res.send(token)
+    //   }
+    //   catch(error){
+    //     console.log(error);
+    //     res.send("An error occured");
+    //   }
 });
+// const schema = Joi.object().keys({
+//     password: Joi.string().required(),
+//     email:Joi.string().min(5).max(255).required().email()
+// });
 
 module.exports=router;
 

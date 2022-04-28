@@ -3,11 +3,12 @@ const app=express();
 const mongoose=require("mongoose");
 const swaggerUI=require("swagger-ui-express");
 const swaggerJsDoc=require("swagger-jsdoc") 
-
+const dotenv= require('dotenv');
+dotenv.config({ path: '.env' });
 
 const connect = async () => {
     try{
-       await mongoose.connect('mongodb://localhost/MyBrand', 
+       await mongoose.connect(process.env.DB_CONNECTION, 
        {
          useNewUrlParser: true, 
          useUnifiedTopology: true
@@ -19,10 +20,10 @@ const connect = async () => {
    }  
    
    connect();
-// require("dotenv/config");
+
 
 // //IMPORT ROUTES
-// mangoose.connect(process.env.DB_CONNECTION,()=>
+// mongoose.connect(process.env.DB_CONNECTION,()=>
 // console.log("connected to DB")
 // );
 const postsRoute=require("./routes/posts");
@@ -30,8 +31,7 @@ const commentsRoute= require("./routes/comments");
 const userRoute=require("./routes/users");
 const likesRouter=require("./routes/likes")
 const authRouter=require("./routes/auth");
-const dotenv= require('dotenv');
-dotenv.config({ path: '.env' });
+
 const cors=require("cors");
 
 app.use(cors())
@@ -62,8 +62,8 @@ const options ={
 }
 const specs =swaggerJsDoc(options)
 app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(specs))
-
-app.listen(7000, ()=>{
-    console.log('app listening on port 7000')
+const PORT=process.env.PORT || 7000
+app.listen(PORT, ()=>{
+    console.log(`app listening on ${PORT}`)
 });
 module.exports=app;
