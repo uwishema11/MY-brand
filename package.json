@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "start:dev": "nodemon",
-    "test": "mocha",
+    "test": "mocha --exit",
     "coverage": "nyc  npm run test"
   },
   "author": "",
