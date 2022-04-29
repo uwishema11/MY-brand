@@ -26,8 +26,7 @@ describe("Test to get all posts ",()=>{
             expect(res.status).to.be.equal(200);
              expect(res.body).to.be.a("object");
              expect(res.body).to.include.keys("posts", "success", );
-            // expect(res.body).to.have.property("title",res.body.title);
-            // expect(res.body).to.have.property("body",res.body.body)
+          
             done();
         });
     }).timeout(30000);
@@ -71,7 +70,7 @@ describe("Test to get all posts ",()=>{
         .post("/users")
         .send(user)
         .end((req,res)=>{
-            //expect(res.status).to.be.equal(200);
+           
             expect(res.body).to.be.a("object");
             expect(res.body.length).not.to.be.equal(0)
             done();
@@ -107,10 +106,11 @@ describe("Test to get all posts ",()=>{
         chai.request(app)
         .delete("/comments")
         .end((req,res)=>{
+        
             done()
-        })
+        });
     }).timeout(30000);
 
-})
+});
 
 
