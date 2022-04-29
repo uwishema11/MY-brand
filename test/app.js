@@ -15,10 +15,10 @@ describe("Test to get all posts ",()=>{
             expect(res.body.length).not.to.equal(0)
             done();
         })
-    });
-});
+    }).timeout(30000);
+    
 
-describe("GET/:id post",()=>{
+
     it("It should get post by Id",(done) =>{
         chai.request(app)
         .get("/posts")
@@ -30,9 +30,9 @@ describe("GET/:id post",()=>{
             // expect(res.body).to.have.property("body",res.body.body)
             done();
         });
-    });
-});
-describe("POST/",()=>{
+    }).timeout(30000);
+    
+
     it("should return a post when the all request is valid",(done)=>{
         let post={
             title:"test post",
@@ -48,11 +48,8 @@ describe("POST/",()=>{
             
             done();
         });
-    });
-});
- 
+    }).timeout(30000);
 
-describe("USER/", ()=>{
     it("should get users",(done)=>{
         chai.request(app)
         .get("/users")
@@ -62,9 +59,8 @@ describe("USER/", ()=>{
             expect(res.body.length).not.to.equal(0)
             done();
         });
-    });
-});
-describe("USER/", ()=>{
+    }).timeout(30000);
+
     it("should post users",(done)=>{
         let user= {
             email:"jesuschrist@gmail.com",
@@ -80,11 +76,8 @@ describe("USER/", ()=>{
             expect(res.body.length).not.to.be.equal(0)
             done();
         });
-    });
-});
+    }).timeout(30000);
 
-//to  comments
-describe("/Comments", ()=>{
     it("should get all comments",(done)=>{
         chai.request(app)
         .get("/comments")
@@ -94,9 +87,8 @@ describe("/Comments", ()=>{
             expect(res.body).to.not.equal(0)
             done()
         });
-    });
-});
-describe("/Comments", ()=>{
+    }).timeout(30000);
+
     it("should post comments",(done)=>{
         chai.request(app)
         .post("/comments")
@@ -107,10 +99,9 @@ describe("/Comments", ()=>{
             expect(res.body.result).to.not.equal(0)
             done()
         });
-    });
-});
-// test to delete a comment 
-describe("/comments", ()=>{
+    }).timeout(30000);
+    
+
     it("should delete post comment", (done)=>{
 
         chai.request(app)
@@ -118,7 +109,8 @@ describe("/comments", ()=>{
         .end((req,res)=>{
             done()
         })
-    })
+    }).timeout(30000);
+
 })
 
 
