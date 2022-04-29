@@ -34,7 +34,10 @@ const authRouter=require("./routes/auth");
 
 const cors=require("cors");
 
-app.use(cors())
+app.use(cors());
+app.options('*',cors());
+app.enable('trust proxy');
+
 
 
 app.use(express.json())
