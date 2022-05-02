@@ -5,6 +5,7 @@ const res = require('express/lib/response');
 const router=express.Router();
 const auth=require("../middleware/auth")
 const postControllers=require("../Controllers/posts")
+
 //api to get all posts
 
 /**
@@ -16,15 +17,22 @@ const postControllers=require("../Controllers/posts")
  *       required:
  *         - title
  *         - body
+ *         - author
+ *         - image
  *       properties:
  *         title:
  *           type: string
  *           description: title of blogs 
  *         body:
  *           type: string
+ *         image:
+ *           type: string
+ *         author:
+ *           type: string
  *       example:
  *         title: developers
  *         body: challanges they meet
+ *         author: Uwishema celine
  */
 
 
@@ -128,7 +136,7 @@ router.get("/",postControllers.getPost)
 
 
 
-router.post("/",postControllers.postPost);
+router.post("/", postControllers.uploadImg,postControllers.postPost);
 
 /**
  * @swagger

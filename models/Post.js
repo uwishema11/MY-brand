@@ -16,32 +16,28 @@ const postSchema=mongoose.Schema({
     },
     likes:{
         type:Number
-    }
+    },
+    image:{
+       type:String
+      
+    },
 
-    // author:{
-    //     type:String,
-    //     required:true,
-    // },
-    // isPublished:Boolean,
+    author:{
+        type:String,
+        required:true,
+    },
+    isPublished:Boolean,
  });
 
 const Post = mongoose.model("Post", postSchema);
-// async function createPost(){
-//     const post= new Post({
-//         title:"Network toplogy",
-//         body: "how computers are arragnged on a network",
-//         author: "Shema",
-//         isPublished: true
-//     });
-//     const result=await post.save(); 
-//     console.log(result);
-// }
-// createPost();
  
 const postAuthSchema = Joi.object().keys({
     title: Joi.string().required(),
     body: Joi.string().required(),
-    likes: Joi.number()
+    image:Joi.string(),
+    author:Joi.string().required(),
+    likes: Joi.number(),
+    isPublished:Joi.boolean()
 })
 
 module.exports.Post = Post;

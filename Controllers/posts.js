@@ -1,13 +1,51 @@
 const { Post, postAuthSchema } = require('../models/Post');
+const cloudinary= require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const multer = require('multer');
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDNAME,
+    api_key: process.env.APIKEY,
+    api_secret: process.env.APISECRET,
+});
+const storage=new CloudinaryStorage({
+    cloudinary:cloudinary,
+    params:{
+        folder:"DEV"
+    },
+});
+const uploadImg = multer({storage: storage}).single('image');
 
 
  const postPost= async function(req,res,next){
-       
-   const blog = await Post.create(req.body);
-   res.status(201).json({
-       success: true,
-       result: blog
-   })
+     try{
+         const result=await postAuthSchema.validate(req.body);
+         const {error}=result
+         if(error) return res.status(404).json({
+             message: error.details[0].message
+         });
+         let post= await Post.findOne({title:req.body.title});
+         if(post) return res.status(404).json({
+             message:"the post already exists"
+         });
+        const newPost={
+            body: req.body.body,
+            title: req.body.title,
+            image: req.file.path,
+            author: req.body.autho,
+            isPublished: true
+        }
+         res.status(200).json({
+             success:true,
+             result:newPost
+         })
+     }
+     catch(error){
+         res.status(500).json({
+             error:error.message
+         });
+     };
+
  };
 
  const getPost=async function(req,res,next){
@@ -73,6 +111,6 @@ const { Post, postAuthSchema } = require('../models/Post');
      getPost,
      getPostById,
      deletePost,
-     putPost
-
+     putPost,
+     uploadImg
  }
