@@ -43,7 +43,7 @@ const deleteComment= async function(req,res,next){
         res.status(200).json({
             success:true,
             message: "deleted"
-        })
+        });
     }
     catch(err){
         res.status(404).json({
@@ -59,7 +59,7 @@ const deleteComment= async function(req,res,next){
         res.status(200).json({
             success:true,
             result:comments
-        })
+        });
     }
     catch(err){
         res.status(400).json({
