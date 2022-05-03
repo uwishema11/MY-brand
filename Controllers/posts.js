@@ -32,12 +32,13 @@ const uploadImg = multer({storage: storage}).single('image');
             body: req.body.body,
             title: req.body.title,
             image: req.file.path,
-            author: req.body.autho,
+            author: req.body.author,
             isPublished: true
         }
+        const created=await Post.create(newPost)
          res.status(200).json({
              success:true,
-             result:newPost
+             result:created
          })
      }
      catch(error){

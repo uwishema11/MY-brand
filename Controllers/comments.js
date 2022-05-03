@@ -17,7 +17,7 @@ const getComment= async function(req,res,next){
 };
 
 const postComment= async function(req,res,next){
-    const result=await commentAuthSchema.validate(req.body)
+    const result= await commentAuthSchema.validate(req.body)
 
     const {error}= result;
     if(error) {
@@ -33,7 +33,7 @@ const postComment= async function(req,res,next){
     }
     const created = await Comment.create(newComment);
     res.status(201).json({
-        "success": true,
+        success: true,
         result: created
     });
 };

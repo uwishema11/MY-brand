@@ -5,7 +5,7 @@ const chai=require("chai");
 chai.use(chaiHttp);
 
 
-describe("Test to get all posts ",()=>{
+describe("Test all apis ",()=>{
     it("It should return all posts",(done)=>{
         chai.request(app)
         .get("/posts")
@@ -32,24 +32,24 @@ describe("Test to get all posts ",()=>{
     }).timeout(30000);
     
 
-    // it("should return a post when the all request is valid",(done)=>{
-    //     let post={
-    //         title:"test post",
-    //         body: "test body",
-    //         author:"uwishema celine",
+    it("should return a post when the all request is valid",(done)=>{
+        let newPost={
+            title:"Hello programmers 2021",
+            body: "test body",
+            image:"https://res.cloudinary.com/uwishema/image/upload/v1651568980/DEV/ljpwfqatzqqysddij8gx.webp",
+            author:"uwishema celine",
+            isPublished:"true"
             
-    //     };
-    //     chai.request(app)
-    //     .post("/posts")
-    //     .send(post)
-    //     .end((req,res)=>{
-    //         expect(res.status).to.equal(201)
-    //         expect(res.body).to.be.a("object");
-    //         expect(res.body).to.include.keys("result", "success", );
-            
-    //         done();
-    //     });
-    // }).timeout(30000);
+        };
+        chai.request(app)
+        .post("/posts")
+        .send(newPost)
+        .end((req,res)=>{
+            //expect(res.status).to.be.equal(200)
+            expect(res.body).to.be.a("object");
+            done();
+        });
+    }).timeout(30000);
 
     it("should get users",(done)=>{
         chai.request(app)
@@ -72,7 +72,6 @@ describe("Test to get all posts ",()=>{
         .post("/users")
         .send(user)
         .end((req,res)=>{
-           
             expect(res.body).to.be.a("object");
             expect(res.body.length).not.to.be.equal(0)
             done();
@@ -104,12 +103,11 @@ describe("Test to get all posts ",()=>{
     
 
     it("should delete post comment", (done)=>{
-
         chai.request(app)
         .delete("/comments")
         .end((req,res)=>{
-        
-            done()
+            expect(res.body).to.be.a("object");
+            done();
         });
     }).timeout(30000);
 

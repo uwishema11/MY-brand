@@ -31,6 +31,7 @@ const commentsRoute= require("./routes/comments");
 const userRoute=require("./routes/users");
 const likesRouter=require("./routes/likes")
 const authRouter=require("./routes/auth");
+const messageRouter= require("./routes/messages")
 
 const cors=require("cors");
 
@@ -51,6 +52,7 @@ app.use("/comments",commentsRoute);
 app.use("/users",userRoute);
 app.use("/likes",likesRouter);
 app.use("/auth",authRouter);
+app.use("/messages",messageRouter)
 
 const options ={
   definition: {
