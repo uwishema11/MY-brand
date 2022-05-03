@@ -21,7 +21,7 @@ const postComment= async function(req,res,next){
 
     const {error}= result;
     if(error) {
-        return res.status(400).json({
+        return res.status(404).json({
            error: error.details[0].message
         })
     }

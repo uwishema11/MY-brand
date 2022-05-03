@@ -10,7 +10,7 @@ describe("Test all apis ",()=>{
         chai.request(app)
         .get("/posts")
         .end((err,res)=>{
-           // expect(res.status).to.be.equal(200);
+           expect(res.status).to.be.equal(200);
             expect(res.body).to.be.a("object");
             expect(res.body.length).not.to.equal(0)
             done();
@@ -22,7 +22,7 @@ describe("Test all apis ",()=>{
     it("It should get post by Id",(done) =>{
         chai.request(app)
         .get("/posts")
-        .end((req,res)=>{
+        .end((err,res)=>{
             expect(res.status).to.be.equal(200);
              expect(res.body).to.be.a("object");
              expect(res.body).to.include.keys("posts", "success", );
@@ -44,8 +44,8 @@ describe("Test all apis ",()=>{
         chai.request(app)
         .post("/posts")
         .send(newPost)
-        .end((req,res)=>{
-            //expect(res.status).to.be.equal(200)
+        .end((err,res)=>{
+            expect(res.status).to.be.equal(200)
             expect(res.body).to.be.a("object");
             done();
         });
@@ -71,7 +71,7 @@ describe("Test all apis ",()=>{
         chai.request(app)
         .post("/users")
         .send(user)
-        .end((req,res)=>{
+        .end((err,res)=>{
             expect(res.body).to.be.a("object");
             expect(res.body.length).not.to.be.equal(0)
             done();
@@ -92,7 +92,7 @@ describe("Test all apis ",()=>{
     it("should post comments",(done)=>{
         chai.request(app)
         .post("/comments")
-        .send({author:"shema",body:"helloo",})
+        .send({author:"shema",body:"helloo"})
         .end((err,res)=>{
             expect(res.status).to.be.equal(404)
             expect(res.body).to.be.a("object");
@@ -105,7 +105,7 @@ describe("Test all apis ",()=>{
     it("should delete post comment", (done)=>{
         chai.request(app)
         .delete("/comments")
-        .end((req,res)=>{
+        .end((err,res)=>{
             expect(res.body).to.be.a("object");
             done();
         });

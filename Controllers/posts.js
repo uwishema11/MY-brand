@@ -31,7 +31,7 @@ const uploadImg = multer({storage: storage}).single('image');
         const newPost={
             body: req.body.body,
             title: req.body.title,
-            image: req.file.path,
+            image: req.file?.filename,
             author: req.body.author,
             isPublished: true
         }
