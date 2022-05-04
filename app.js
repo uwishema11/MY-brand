@@ -64,7 +64,7 @@ const options ={
     },
     servers:[
       {
-        url:"http://localhost:7000 "
+        url:"https://uwishema.herokuapp.com "
       }
     ],
   }, 
