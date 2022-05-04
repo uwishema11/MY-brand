@@ -25,12 +25,12 @@ const router=express.Router();
  */ 
 /**
  * @swagger
- * /users:
+ * /messages:
  *   get:
- *     summary: getting all  users
+ *     summary: getting all  messages
  *     responses:
  *       200:
- *          description: get all users
+ *          description: get all messages
  */
 
 /**
@@ -52,6 +52,7 @@ const router=express.Router();
  *         description: Some server error
  */
 
+ 
 /**
  * @swagger
  * /messages:
@@ -68,7 +69,7 @@ const router=express.Router();
  *     summary: adding a message
  *     security:
  *      - ApiKeyAuth: []
- *     tags: [Message]
+ *     tags: [Messages]
  *     requestBody:
  *       required: true
  *       content:
@@ -87,6 +88,6 @@ const router=express.Router();
  */
 
 
-router.get("/",messageControllers.getMessages);
+ router.get("/",messageControllers.getMessages);
 router.post("/",messageControllers.postMessage);
 module.exports=router;
