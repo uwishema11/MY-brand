@@ -136,7 +136,7 @@ router.get("/",userController.getAllUsers);
     //        result: created
     //    })
 
-
+    
 
 router.delete('/:id', [auth,admin], async function(req,res) {
     try{

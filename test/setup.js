@@ -3,8 +3,8 @@
 
 const moongose= require("mongoose");
 const { config }=  require('dotenv');
-const {Post,postAuthSchema} = require("../models/Post");
-const {User, userAuthSchema }=require("../models/User");
+const {Post} = require("../models/Post");
+const {User }=require("../models/User");
 const {Comment}=require("../models/Comment")
 
 config({ path: '.env' });

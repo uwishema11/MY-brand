@@ -87,7 +87,7 @@ describe("Test all apis ",()=>{
             expect(res.body).to.not.equal(0)
             done()
         });
-    }).timeout(30000);
+    }).timeout(40000);
 
     it("should post comments",(done)=>{
         chai.request(app)

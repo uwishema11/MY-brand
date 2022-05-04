@@ -69,10 +69,7 @@ const dotenv=require("dotenv")
 
 
 router.post("/", async function (req,res){
-    //   try{
-    //     const { error } = await schema.validate(req.body);
-    //     if (error) return res.status(400).send(error.details[0].message);
-
+    
    const user= await User.findOne({email:req.body.email});
    if(!user)return res.status(400).json({
     status_code:0,
@@ -87,16 +84,7 @@ router.post("/", async function (req,res){
     
    const token=user.generateAuthToken();
     res.send(token)
-    //   }
-    //   catch(error){
-    //     console.log(error);
-    //     res.send("An error occured");
-    //   }
 });
-// const schema = Joi.object().keys({
-//     password: Joi.string().required(),
-//     email:Joi.string().min(5).max(255).required().email()
-// });
 
 module.exports=router;
 
