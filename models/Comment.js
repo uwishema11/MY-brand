@@ -24,10 +24,7 @@ const commentSchema= mongoose.Schema({
          required: true,
          ref: 'Post'
      }
-    // post:{
-    //     type:postSchema,
-    //     required:true
-    // }
+    
 });
 const Comment=mongoose.model("Comment",commentSchema);
 const commentAuthSchema = Joi.object().keys({
