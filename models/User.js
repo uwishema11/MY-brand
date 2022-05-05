@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
 const Joi=require("joi");
 const jwt=require("jsonwebtoken");
+const { min } = require("lodash");
 const userSchema=mongoose.Schema({
     name: {
         type:String,
@@ -26,7 +27,7 @@ userSchema.methods.generateAuthToken=function(){
 const User= mongoose.model("User",userSchema);
 const userAuthSchema = Joi.object().keys({
     name: Joi.string().required(),
-    password: Joi.string().required(),
+    password: Joi.string().min(5).max(10).required(),
     email:Joi.string().min(5).max(255).required().email()
 });
 module.exports.User=User;

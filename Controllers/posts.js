@@ -57,9 +57,9 @@ const uploadImg = multer({storage: storage}).single('image');
             posts: posts
         }) 
     }catch(err) {
-        res.status(400).json({
+        res.status(500).json({
             success: false,
-            error: err.message
+            error: "server error"
         })
     }
 

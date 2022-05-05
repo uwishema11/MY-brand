@@ -1,4 +1,6 @@
 const { Comment,commentAuthSchema } = require('../models/Comment');
+const { Post } = require('../models/Post');
+
 
 const getComment= async function(req,res,next){
     try{
@@ -17,7 +19,8 @@ const getComment= async function(req,res,next){
 };
 
 const postComment= async function(req,res,next){
-    const result= await commentAuthSchema.validate(req.body)
+    try{
+        const result= await commentAuthSchema.validate(req.body)
 
     const {error}= result;
     if(error) {
@@ -25,17 +28,23 @@ const postComment= async function(req,res,next){
            error: error.details[0].message
         })
     }
-    
     const newComment = {
         body: req.body.body,
         author: req.body.author,
         post: req.params.postId
     }
+
     const created = await Comment.create(newComment);
     res.status(201).json({
         success: true,
         result: created
     });
+    }
+    catch(error){
+        res.status(404).json({
+            error:" no such post"
+        })
+    }
 };
 const deleteComment= async function(req,res,next){
     try{

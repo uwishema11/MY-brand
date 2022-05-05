@@ -26,8 +26,9 @@ const postSchema=mongoose.Schema({
         type:String,
         required:true,
     },
-    isPublished:Boolean,
+    isPublished:Boolean
  });
+ 
 
 const Post = mongoose.model("Post", postSchema);
  

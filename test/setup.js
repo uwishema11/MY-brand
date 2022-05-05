@@ -6,6 +6,7 @@ const { config }=  require('dotenv');
 const {Post} = require("../models/Post");
 const {User }=require("../models/User");
 const {Comment}=require("../models/Comment")
+const {Message}=require("../models/Message")
 
 config({ path: '.env' });
 
@@ -17,6 +18,7 @@ beforeEach(done => {
   User.deleteMany({}, function(err) {});
   Post.deleteMany({}, function(err) {});
   Comment.deleteMany({},function(err) {});
+  Message.deleteMany({},function(err) {});
   done();
 });
 
@@ -24,5 +26,6 @@ afterEach(done => {
     User.deleteMany({}, function(err) {});
     Post.deleteMany({}, function(err) {});
     Comment.deleteMany({},function(err) {});
+    Message.deleteMany({},function(err) {});
   done();
 });
