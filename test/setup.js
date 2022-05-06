@@ -2,17 +2,10 @@
 /* eslint-disable no-undef */
 
 const moongose= require("mongoose");
-const { config }=  require('dotenv');
 const {Post} = require("../models/Post");
 const {User }=require("../models/User");
 const {Comment}=require("../models/Comment")
-const {Message}=require("../models/Message")
-
-config({ path: '.env' });
-
-const DB_TEST = "mongodb+srv://uwishema11:uwishema@cluster0.b4eee.mongodb.net/myFirstDatabase_test?retryWrites=true&w=majority"
-
- moongose.connect(DB_TEST).then(() => console.log('Test DB connected successful !'));
+const {Message}=require("../models/Message");
 
 beforeEach(done => {
   User.deleteMany({}, function(err) {});

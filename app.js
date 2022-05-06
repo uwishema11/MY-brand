@@ -7,16 +7,30 @@ const dotenv= require('dotenv');
 dotenv.config({ path: '.env' });
 
 const connect = async () => {
+
+if(process.env.NODE_ENV == "test"){
     try{
-       await mongoose.connect(process.env.DB_CONNECTION, 
+       await mongoose.connect(process.env.DB_TEST, 
        {
          useNewUrlParser: true, 
          useUnifiedTopology: true
        })
-       console.log("db connection successful")
+       console.log("test db connection successful")
      }catch(err) {
        console.log(err);
      }
+}else{
+  try{
+    await mongoose.connect(process.env.DB_CONNECTION, 
+    {
+      useNewUrlParser: true, 
+      useUnifiedTopology: true
+    })
+    console.log("db connection successful")
+  }catch(err) {
+    console.log(err);
+  }
+}
    }  
    
    connect();
